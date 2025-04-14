@@ -1,3 +1,5 @@
 [workspace]
-resolver = "2"
-members = []
+resolver = "3"
+members = [
+    "p12",
+]
