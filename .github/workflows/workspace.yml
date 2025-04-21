@@ -12,6 +12,16 @@ env:
   RUSTDOCFLAGS: "-Dwarnings"
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: RustCrypto/actions/cargo-cache@master
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: stable
+      - run: cargo build --all --all-features
+
   test:
     runs-on: ubuntu-latest
     steps:
